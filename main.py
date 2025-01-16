@@ -10,18 +10,33 @@ screen = pygame.display.set_mode(SCREEN_SIZE)
 run=True
 clock = pygame.time.Clock() 
 
-player = pygame.Rect((300,250,50,50))
-
+player = pygame.Rect((300,250,30,30))
+wall = pygame.Rect((300000000000000000,250,30,30))
 mapFile = open(r"map.txt","r")
 
 mapX=int(mapFile.readline())
 mapY=int(mapFile.readline())
-print("%d %d" %(mapX,mapY))
+print("%d %d" %(mapY,mapX))
+
+mapArray=[]
+for y in range(mapY):
+    temp=mapFile.readline()
+    
+    mapArray.append(temp.split(' '))
+    
+for x in range(mapX): 
+    print()
+    for y in range(mapY):
+        print(mapArray[x][y]+" ",end="")
+
 while run:
     screen.fill((255,255,255))
 
     clock.tick(60) 
-
+    for x in range(mapX): 
+    
+        for y in range(mapY):
+    
     pygame.draw.rect(screen,(255,0,0),player)
 
     key = pygame.key.get_pressed()
@@ -41,3 +56,4 @@ while run:
     
     pygame.display.update()
 pygame.quit()
+
