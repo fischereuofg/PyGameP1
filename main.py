@@ -36,7 +36,8 @@ while run:
     for x in range(mapX): 
     
         for y in range(mapY):
-    
+            pygame.draw.rect(screen,(255,0,0),wall)
+            
     pygame.draw.rect(screen,(255,0,0),player)
 
     key = pygame.key.get_pressed()
