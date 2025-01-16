@@ -8,11 +8,20 @@ SCREEN_SIZE=(800,600)
 screen = pygame.display.set_mode(SCREEN_SIZE)
 
 run=True
+clock = pygame.time.Clock() 
 
 player = pygame.Rect((300,250,50,50))
 
+mapFile = open(r"map.txt","r")
+
+mapX=int(mapFile.readline())
+mapY=int(mapFile.readline())
+print("%d %d" %(mapX,mapY))
 while run:
-    screen.fill((0,0,0))
+    screen.fill((255,255,255))
+
+    clock.tick(60) 
+
     pygame.draw.rect(screen,(255,0,0),player)
 
     key = pygame.key.get_pressed()
