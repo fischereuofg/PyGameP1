@@ -11,7 +11,7 @@ run=True
 clock = pygame.time.Clock() 
 
 player = pygame.Rect((300,250,30,30))
-wall = pygame.Rect((300000000000000000,250,30,30))
+wall = pygame.Rect((300,250,30,30))
 mapFile = open(r"map.txt","r")
 
 mapX=int(mapFile.readline())
