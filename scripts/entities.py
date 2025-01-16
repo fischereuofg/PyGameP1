@@ -5,3 +5,6 @@ class walls:
         self.pos = tuple(pos)
         self.type = wType
         self.collision = collision
+
+    def draw(self,surf):
+        surf.blit()
